@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class StartPlane : MonoBehaviour {
+public class MoveableObject : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -11,5 +11,8 @@ public class StartPlane : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		transform.position = transform.position-GameManager.instance.getGameSpeed();
+
+		if (transform.position.z + transform.localScale.z < GameManager.instance.getZClip())
+			Destroy (gameObject);
 	}
 }
