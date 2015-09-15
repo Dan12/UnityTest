@@ -45,8 +45,6 @@ public class GameManager : MonoBehaviour {
 			if(gameSpeed.z > currentSpeed)
 				gameSpeed.z = currentSpeed;
 		}
-
-		//print (gameSpeed);
 	}
 
 	public float getZClip(){

@@ -6,10 +6,6 @@ public class Player : MonoBehaviour {
 	public float rotMult = 1f;
 
 	private float rotSpeed = 0f;
-
-	// Use this for initialization
-	void Start () {
-	}
 	
 	// Update is called once per frame
 	void Update () {
