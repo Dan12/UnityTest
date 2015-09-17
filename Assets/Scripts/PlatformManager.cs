@@ -87,6 +87,20 @@ public class PlatformManager : MonoBehaviour {
 			addNewObject (Random.Range (0, types.Length));
 			addNewObject(0);
 		}
+
+		if(Input.GetKeyDown(KeyCode.LeftArrow)){
+			foreach(GameObject gm in platformList){
+				gm.transform.position = gm.transform.position-(new Vector3(-platScaleX,0f,0f));
+			}
+			xStart+=platScaleX;
+		}
+
+		else if(Input.GetKeyDown(KeyCode.RightArrow)){
+			foreach(GameObject gm in platformList){
+				gm.transform.position = gm.transform.position-(new Vector3(platScaleX,0f,0f));
+			}
+			xStart-=platScaleX;
+		}
 	}
 
 	void addNewObject(int t){
@@ -102,5 +116,9 @@ public class PlatformManager : MonoBehaviour {
 				zStart+=platScaleZ;
 			}
 		}
+	}
+
+	public void removeObject(GameObject gm){
+		platformList.Remove (gm);
 	}
 }

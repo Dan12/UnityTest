@@ -11,5 +11,6 @@ public class Player : MonoBehaviour {
 	void Update () {
 		rotSpeed = GameManager.instance.getGameSpeed().z * rotMult;
 		transform.Rotate (rotSpeed, 0f, 0f);
+		transform.position = new Vector3 (0f,transform.position.y,0f);
 	}
 }

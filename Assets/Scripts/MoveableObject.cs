@@ -8,7 +8,7 @@ public class MoveableObject : MonoBehaviour {
 		transform.position = transform.position-GameManager.instance.getGameSpeed();
 
 		if (transform.position.z + transform.localScale.z < GameManager.instance.getZClip ()) {
-
+			PlatformManager.pInstance.removeObject(gameObject);
 			Destroy (gameObject);
 		}
 	}
